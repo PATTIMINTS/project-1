@@ -1,14 +1,29 @@
+/* FONT STYLE */
+
+/* CONTAINER SYTLE */ 
+.container {
+    background-color: darkgray;
+    color: white;
+    /* background-image: linear-gradient(to right top, blue, teal, darkgreen, black); */    
+}
+
+/* TOP LOGO STYLE */
+.logo {
+    height: 50px;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}
+
+/* MAP STYLE */
 #map{
     height: 400px;
     width: 100%;
 }
 
+/* GIG LIST STYLE */
 .gigList {
     height: 400px;
     width: 100%;
 }
 
-.logo {
-    height: 50px;
-    width: 100%;
-}
