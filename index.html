@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- REQUIRED TAGS -->
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- TAB TITLE -->
+    <!-- TAB TITLE -->
     <title>Give Me the Music</title>
+    <!-- BOOTSTRAP TAG -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-        <!-- LOCAL CSS TAG -->
+    <!-- LOCAL CSS TAG -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-        <!-- jQUERY TAG -->
+    <!-- jQUERY TAG -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-        <!-- POPPER.JS TAG -->
+    <!-- POPPER.JS TAG -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-        <!-- BOOTSTRAP -->
+    <!-- BOOTSTRAP -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-        <!-- LOCAL JAVASCRIPT TAG -->
+    <!-- LOCAL JAVASCRIPT TAG -->
     <script src="assets/javascript/app.js"></script>
 </head>
 
 <!-- CONTENT -->
+
 <body>
     <!-- LOGO -->
     <div class="container">
-        <div class="row border page-title">
+        <div class="row">
             <div class="col-12">
-                <p class="text-center">Show Me the Music</p>
+                <div class="logo">
+                    <p class="text-center">Show Me the Music</p>
+                </div>
             </div>
         </div>
         <!-- MAP -->
@@ -39,15 +44,37 @@
                 <div id="map"></div>
             </div>
         </div>
+        <!-- GIG LIST | TABLE via BOOTSTRAP -->
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">DATE</th>
+                            <th scope="col">BAND NAME </th>
+                            <th scope="col">VENUE</th>
+                            <th scope="col">INFORMATION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">9/22/2018</th>
+                            <td>Nine Inch Nails</td>
+                            <td>AT&T Center</td>
+                            <td> <a href="https://rivercityrockfest.com/tickets.html"> Buy Tickets </a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9/22/2018</th>
+                            <td>Meg Myers w/ Adam Jones</td>
+                            <td>Antone's</td>
+                            <td> <a href="https://www.ticketfly.com/purchase/event/1711738?utm_medium=1098158">Buy
+                                    Tickets</a></td>
+                        </tr>
+            </div>
+        </div>
     </div>
-
-
-
-    <script>
-        
-    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&callback=initMap"
-    async defer></script>
+        async defer></script>
 </body>
 
 </html>
