@@ -12,16 +12,16 @@ firebase.initializeApp(config);
 
 var database = firebase.database()
 
-var newTrain = {
+var newBand = {
 name: "name",
-destination: "destination",
-firstTrainTime: "firstTrainTime",
+venue: "venue",
+time: "time",
 dateAdded:firebase.database.ServerValue.TIMESTAMP
  
 };
-console.log (newTrain);
+console.log (newBand);
 // Code for push to database
-database.ref("/user").push(newTrain);
+database.ref("/user").push(newBand);
 
 function initMap(){
     // Map options 
