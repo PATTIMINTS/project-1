@@ -21,7 +21,7 @@ dateAdded:firebase.database.ServerValue.TIMESTAMP
 };
 console.log (newTrain);
 // Code for push to database
-database.ref().push(newTrain);
+database.ref("/user").push(newTrain);
 
 function initMap(){
     // Map options 
