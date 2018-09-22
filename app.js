@@ -23,6 +23,7 @@ console.log (newBand);
 // Code for push to database
 database.ref("/user").push(newBand);
 
+
 function initMap(){
     // Map options 
     let options = {
