@@ -1,3 +1,28 @@
+var config = {
+  
+  apiKey: "AIzaSyAmRLP2Bvl5wJ3865wrIMmlhFQfjV8hHn0",
+  authDomain: "t-th-2018-e7c2e.firebaseapp.com",
+  databaseURL: "https://t-th-2018-e7c2e.firebaseio.com",
+  projectId: "t-th-2018-e7c2e",
+  storageBucket: "t-th-2018-e7c2e.appspot.com",
+  messagingSenderId: "56220760164"
+
+};
+firebase.initializeApp(config);
+
+var database = firebase.database()
+
+var newTrain = {
+name: "name",
+destination: "destination",
+firstTrainTime: "firstTrainTime",
+dateAdded:firebase.database.ServerValue.TIMESTAMP
+ 
+};
+console.log (newTrain);
+// Code for push to database
+database.ref().push(newTrain);
+
 function initMap(){
     // Map options 
     let options = {
