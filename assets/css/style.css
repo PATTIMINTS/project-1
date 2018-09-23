@@ -21,6 +21,15 @@
     width: 100%;
 }
 
+/* SEARCH BOX */
+#pac-input{
+    height: 35px;
+    width: 220px;
+    font-size: 20px;
+    background-color: rgb(206, 206, 206);
+    padding: 25px;
+}
+
 /* 9/20 GIG LIST STYLE | HAS BEEN REVISED, SAVE UNTIL MASTER PUSH 
 .gigList {
     height: 400px;
