@@ -145,6 +145,7 @@ function initAutocomplete() {
         console.log("Returned place contains no geometry");
         return;
       }
+      //icon to change
       let icon = {
         url: place.icon,
         size: new google.maps.Size(71, 71),
