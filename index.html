@@ -16,7 +16,7 @@
     <!-- jQUERY TAG -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <!--Bootstrap -->    
+    <!--Bootstrap -->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <!-- POPPER.JS TAG -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -24,6 +24,9 @@
     <!-- BOOTSTRAP -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <!--GOOGLE PLACES API-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script>
+
     <!-- LOCAL JAVASCRIPT TAG -->
     <script src="assets/javascript/app.js"></script>
 </head>
@@ -43,36 +46,37 @@
         <!-- MAP -->
         <div class="row">
             <div class="col-12">
+                <input id="pac-input" class="controls" type="text" placeholder="Search Box">
                 <div id="map"></div>
             </div>
         </div>
-                    <!--TABLE FOR "GIG LIST"-->
+        <!--TABLE FOR "GIG LIST"-->
         <div class="card bg-info mb-3">
-                <div class="card-header titles subtitles">My Upcoming Concerts</div>
-                <div class="card-body text-info">
-                    <table class="table table-info rounded" id="gigTable">
-                        <thead>
-                            <tr>
-                                <th scope="col" id="date-display">Date</th>
-                                <th scope="col" id="band-display">Band Name</th>
-                                <th scope="col" id="venue-display">Venue</th>
-                                <th scope="col" id="time-display">Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- <td id="name-display">#</td>
+            <div class="card-header titles subtitles">My Upcoming Concerts</div>
+            <div class="card-body text-info">
+                <table class="table table-info rounded" id="gigTable">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="date-display">Date</th>
+                            <th scope="col" id="band-display">Band Name</th>
+                            <th scope="col" id="venue-display">Venue</th>
+                            <th scope="col" id="time-display">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- <td id="name-display">#</td>
                                 <td id="destination-display">#</td>
                                 <td id="frequency-display">#</td>
                                 <td id="arrival-display">#</td>
                                 <td id="minutes-display">#</td> -->
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </div>
 
-            <!-- 9/20 GIG LIST | TABLE via BOOTSTRAP 
+        <!-- 9/20 GIG LIST | TABLE via BOOTSTRAP 
                 PLACEHOLDER, FIXED TABLE ABOVE. KEEP UNTIL MASTER PUSH ------------------------------
         <div class="row">
             <div class="col-12">
@@ -102,9 +106,11 @@
             </div>
         </div>
     </div> -->
-        
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&callback=initMap"
-        async defer></script>
+
+    <!--MAP API KEY-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&libraries=places&callback=initAutocomplete"
+            async defer></script>
+
 </body>
 
 </html>
