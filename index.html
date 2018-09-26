@@ -14,8 +14,10 @@
     <!-- LOCAL CSS TAG -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <!-- jQUERY TAG -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <!--Bootstrap -->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <!-- POPPER.JS TAG -->
@@ -25,8 +27,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <!--GOOGLE PLACES API-->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&libraries=places&callback=initAutocomplete"
+            async defer></script>
     <!-- LOCAL JAVASCRIPT TAG -->
     <script src="assets/javascript/app.js"></script>
 </head>
@@ -46,6 +48,8 @@
         <!-- MAP -->
         <div class="row">
             <div class="col-12">
+                <input type="text" class="eventSearch" placeholder="Search City">
+                <button type="button" class="btn btn-info">GO</button>
                 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
                 <div id="map"></div>
             </div>
@@ -107,9 +111,7 @@
         </div>
     </div> -->
 
-    <!--MAP API KEY-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&libraries=places&callback=initAutocomplete"
-            async defer></script>
+        
 
 </body>
 

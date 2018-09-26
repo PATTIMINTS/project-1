@@ -1,3 +1,4 @@
+
 let config = {
 
   apiKey: "AIzaSyAmRLP2Bvl5wJ3865wrIMmlhFQfjV8hHn0",
@@ -19,7 +20,7 @@ let newBand = {
   dateAdded: firebase.database.ServerValue.TIMESTAMP
 
 };
-console.log(newBand);
+//console.log(newBand);
 // Code for push to database
 database.ref("/user").push(newBand);
 
@@ -172,6 +173,39 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 }
+
+
+
+// BANDS IN TOWN API 
+
+let apiKey = "?app_id=3c5eb98e695dc304f85847f7a803873b";
+
+
+function eventSearch(locationSearch){
+  let queryUrl = "https://rest.bandsintown.com/artists/" + locationSearch + apiKey;
+
+  $.ajax({
+    url: queryUrl,
+    method: "Get"
+  }).done(function(response) {
+    for( let i = 0; i < response.length;  i++ ){
+      let event = response[i];
+
+      // event.venue.city;
+    }
+
+    console.log(response);
+    //write to dom 
+  })
+};
+
+console.log(eventSearch("grimes"));
+
+
+
+
+
+
 
 
 
