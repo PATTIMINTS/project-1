@@ -1,11 +1,21 @@
+body {
+    background-image: url(../images/emosbw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+}
+
 /* FONT STYLE */
 
 /* CONTAINER SYTLE */ 
 .container {
     background-color: darkgray;
     color: white;
+    
     /* background-image: linear-gradient(to right top, blue, teal, darkgreen, black); */    
 }
+
 
 /* TOP LOGO STYLE */
 .logo {
@@ -13,6 +23,23 @@
     width: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 25px;
+}
+
+#title {
+    font-family: 'Barrio', cursive;
+    font-size: 40px;
+    font-weight: bolder;
+    
+    
+}
+/* Table for gig list */
+
+.gig {
+    /*background-color: rgba(109, 32, 18, 0.774);*/
+    background-color: rgb(20, 45, 66)
+}
+#gigTable {
+    background-color: white;
 }
 
 /* MAP STYLE */
@@ -30,6 +57,16 @@
     background-color: rgb(206, 206, 206);
     padding: 25px;
 }
+
+#red {
+    color: rgb(161, 10, 10);
+}
+
+.fa-band-aid {
+    color: rgb(161, 10, 10);
+}
+
+
 
 /* 9/20 GIG LIST STYLE | HAS BEEN REVISED, SAVE UNTIL MASTER PUSH 
 .gigList {
