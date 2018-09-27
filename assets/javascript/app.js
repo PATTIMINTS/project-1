@@ -1,4 +1,4 @@
-let config = {
+var config = {
 
   apiKey: "AIzaSyAmRLP2Bvl5wJ3865wrIMmlhFQfjV8hHn0",
   authDomain: "t-th-2018-e7c2e.firebaseapp.com",
@@ -10,12 +10,20 @@ let config = {
 };
 firebase.initializeApp(config);
 
-let database = firebase.database()
+var database = firebase.database()
 
-let newBand = {
-  name: "name",
-  venue: "venue",
-  time: "time",
+
+
+var date = "10/1";
+var name = "Lydia Lunch";
+var venue = "Beerland";
+var time = "8 PM";
+
+var newBand = {
+  date: date,
+  name: name,
+  venue: venue,
+  time: time,
   dateAdded: firebase.database.ServerValue.TIMESTAMP
 
 };
@@ -24,154 +32,150 @@ console.log(newBand);
 database.ref("/user").push(newBand);
 
 
-// MAP WITH SEARCH BOX
-function initAutocomplete() {
-  let map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 30.2672, lng: -97.7431},
+database.ref("/user").on("child_added", function (childSnapshot, prevChildKey) {
+
+  var dateof = childSnapshot.val().date;
+  var bandName = childSnapshot.val().name;
+  var venues = childSnapshot.val().venue;
+  var timeof = childSnapshot.val().time;
+
+
+  console.log(dateof);
+  console.log(venues);
+  console.log(bandName);
+  console.log(timeof);
+
+  
+  //  This works also
+  // $("#date-display").append("<tr><td>" + dateof + "</td>");
+  // $("#band-display").append("<tr><td>" + bandName + "</td>");
+  // $("#venue-display").append("<tr><td>" + venues + "</td>");
+  // $("#time-display").append("<tr><td>" + timeof + "</td>");
+
+  $("#gigTable > tbody").append("<tr><td> " + dateof + "</td><td>" + bandName+ "</td><td>" + venues + "</td><td>" + timeof + "</td></tr>");
+  
+}, function (errorObject) {
+  console.log("Errors handled: " + errorObject.code);
+
+})
+
+
+
+function initMap() {
+  // Map options 
+  let options = {
     zoom: 12,
-    mapTypeId: 'roadmap',
+    center: { lat: 30.2672, lng: -97.7431 },
     styles: [
-            { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-            { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-            { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
-            {
-              featureType: 'administrative.locality',
-              elementType: 'labels.text.fill',
-              stylers: [{ color: '#d59563' }]
-            },
-            {
-              featureType: 'poi',
-              elementType: 'labels.text.fill',
-              stylers: [{ color: '#d59563' }]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'geometry',
-              stylers: [{ color: '#263c3f' }]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'labels.text.fill',
-              stylers: [{ color: '#6b9a76' }]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [{ color: '#38414e' }]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry.stroke',
-              stylers: [{ color: '#212a37' }]
-            },
-            {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [{ color: '#9ca5b3' }]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{ color: '#746855' }]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{ color: '#1f2835' }]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'labels.text.fill',
-              stylers: [{ color: '#f3d19c' }]
-            },
-            {
-              featureType: 'transit',
-              elementType: 'geometry',
-              stylers: [{ color: '#2f3948' }]
-            },
-            {
-              featureType: 'transit.station',
-              elementType: 'labels.text.fill',
-              stylers: [{ color: '#d59563' }]
-            },
-            {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{ color: '#17263c' }]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.fill',
-              stylers: [{ color: '#515c6d' }]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.stroke',
-              stylers: [{ color: '#17263c' }]
-            }
-          ]
-  });
-
-  // Create the search box and link it to the UI element.
-  let input = document.getElementById('pac-input');
-  let searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
-
-  let markers = [];
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
-  searchBox.addListener('places_changed', function() {
-    let places = searchBox.getPlaces();
-
-    if (places.length == 0) {
-      return;
-    }
-
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
-
-    // For each place, get the icon, name and location.
-    let bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
+      { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+      { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+      { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+      {
+        featureType: 'administrative.locality',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#d59563' }]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#d59563' }]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'geometry',
+        stylers: [{ color: '#263c3f' }]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#6b9a76' }]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{ color: '#38414e' }]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry.stroke',
+        stylers: [{ color: '#212a37' }]
+      },
+      {
+        featureType: 'road',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#9ca5b3' }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{ color: '#746855' }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry.stroke',
+        stylers: [{ color: '#1f2835' }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#f3d19c' }]
+      },
+      {
+        featureType: 'transit',
+        elementType: 'geometry',
+        stylers: [{ color: '#2f3948' }]
+      },
+      {
+        featureType: 'transit.station',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#d59563' }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{ color: '#17263c' }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#515c6d' }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.stroke',
+        stylers: [{ color: '#17263c' }]
       }
-      //icon to change
-      let icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
+    ]
+  }
+  // New Map
+  let map = new google.maps.Map(document.getElementById('map'), options);
 
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
-
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
+  /*
+  // Add marker
+  let marker =  new google.maps.Marker({
+      position: {lat:30.246765, lng:-97.73162100000002},
+      map:map 
   });
+  
+  // Info window
+  let infoWindow = new google.maps.InfoWindow({
+      content: "<h6>Where Lance lives</h6>"
+  });
+  
+  // Listener for click 
+  marker.addListener("click", function(){
+      infoWindow.open(map, marker);
+  }); 
+  */
+
+  // Add marker function 
+  function addMarker(coords) {
+    let marker = new google.maps.Marker({
+      position: { lat: 30.246765, lng: -97.73162100000002 },
+      map: map
+    });
+  }
+
+
+
 }
-
-
-
