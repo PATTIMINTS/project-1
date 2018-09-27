@@ -178,29 +178,41 @@ function initAutocomplete() {
 
 // BANDS IN TOWN API 
 
-let apiKey = "?app_id=3c5eb98e695dc304f85847f7a803873b";
-
+let apiKey = "FLXsLL3QQ77sw3ob";
+let searchLatLng = "30.2672,-97.7431";
+let response = [];
 
 function eventSearch(locationSearch){
-  let queryUrl = "https://rest.bandsintown.com/artists/" + locationSearch + apiKey;
+  let queryUrl = "https://api.songkick.com/api/3.0/events.json?apikey=" + apiKey + "&location=geo:" +  searchLatLng;
+
+  var foo = {};
 
   $.ajax({
     url: queryUrl,
     method: "Get"
   }).done(function(response) {
+    foo.locations = response; 
     for( let i = 0; i < response.length;  i++ ){
-      let event = response[i];
-
-      // event.venue.city;
+      let event = response[i];     
     }
 
-    console.log(response);
+    function eqfeed_callback(response) {
+      map.data.addGeoJson(response);
+    }
+
+    $("#eventSearchButton").on("click", function() {
+      alert("clicked");
+    });
+
+    // data lives in response 
+    //console.log(response);
+    
     //write to dom 
   })
 };
 
-console.log(eventSearch("grimes"));
-
+eventSearch();
+console.log(resultsPage.results.event[0].displayName);
 
 
 
