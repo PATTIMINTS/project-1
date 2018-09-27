@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <!-- REQUIRED TAGS -->
 
 <head>
@@ -14,28 +15,7 @@
     <!-- LOCAL CSS TAG -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-
-   
-
-    <!-- jQUERY TAG -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <!--firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-    <!-- POPPER.JS TAG -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <!-- BOOTSTRAP -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-
-    <!--GOOGLE PLACES API-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&libraries=places&callback=initAutocomplete"
-            async defer></script>
-
-    <!-- LOCAL JAVASCRIPT TAG -->
-    <script src="assets/javascript/app.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />   
 
 </head>
 
@@ -68,59 +48,10 @@
                 <div id="map"></div>
             </div>
         </div>
+  
 
-        <div class="likes">
-            <div class="likes_field">
-                <svg class="likes_icon">
-                        <use href="img.svg#icon-heart"></use>
-                </svg>
-            </div>
-        </div>    
-
-                    <!--TABLE FOR "GIG LIST"-->
-        <div class="card bg-info mb-3">
-                <div class="card-header titles subtitles">My Upcoming Concerts</div>
-                <div class="card-body text-info">
-                    <table class="table table-info rounded" id="gigTable">
-                        <thead>
-                            <tr>
-                                <th scope="col" id="date-display">Date</th>
-                                <th scope="col" id="band-display">Band Name</th>
-                                <th scope="col" id="venue-display">Venue</th>
-                                <th scope="col" id="time-display">Time</th>
-                            </tr>
-                        </thead>
-
-                        
-=======
         <!--TABLE FOR "GIG LIST"-->
-
-        <div class="card bg-info mb-3">
-            <div class="card-header titles subtitles">My Upcoming Concerts</div>
-            <div class="card-body text-info">
-                <table class="table table-info rounded" id="gigTable">
-                    <thead>
-                        <tr>
-                            <th scope="col" id="date-display">Date</th>
-                            <th scope="col" id="band-display">Band Name</th>
-                            <th scope="col" id="venue-display">Venue</th>
-                            <th scope="col" id="time-display">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <!-- <td id="name-display">#</td>
-
-                                <td id="destination-display">#</td>
-                                <td id="frequency-display">#</td>
-                                <td id="arrival-display">#</td>
-                                <td id="minutes-display">#</td> -->
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-=======
+    
         <div class="row">
             <div class="col-12">
                 <div class="card bg-info mb-3">
@@ -151,69 +82,34 @@
                 </div>
                 </div>
                 </div>
-                
-\
 
-                <!-- 9/20 GIG LIST | TABLE via BOOTSTRAP 
-                PLACEHOLDER, FIXED TABLE ABOVE. KEEP UNTIL MASTER PUSH ------------------------------
-        <div class="row">
-            <div class="col-12">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">DATE</th>
-                            <th scope="col">BAND NAME </th>
-                            <th scope="col">VENUE</th>
-                            <th scope="col">INFORMATION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">9/22/2018</th>
-                            <td>Nine Inch Nails</td>
-                            <td>AT&T Center</td>
-                            <td> <a href="https://rivercityrockfest.com/tickets.html"> Buy Tickets </a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9/22/2018</th>
-                            <td>Meg Myers w/ Adam Jones</td>
-                            <td>Antone's</td>
-                            <td> <a href="https://www.ticketfly.com/purchase/event/1711738?utm_medium=1098158">Buy
-                                    Tickets</a></td>
-                        </tr>
-            </div>
-        </div>
-    </div> -->
 
+
+<!-- END TAGS -->
+
+    <!-- jQUERY TAG -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!--FIREBASE TAG -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <!-- POPPER.JS TAG -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!--GOOGLE PLACES API-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&libraries=places&callback=initAutocomplete"
+            async defer></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&callback=initMap"
-        async defer></script>
+            async defer></script>
 
 
- <!-- jQUERY TAG -->
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
- crossorigin="anonymous"></script>
-<!-- POPPER.JS TAG -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
- crossorigin="anonymous"></script>
-<!-- BOOTSTRAP -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
- crossorigin="anonymous"></script>
-<!-- LOCAL JAVASCRIPT TAG -->
-<script src="assets/javascript/app.js"></script>
+    <!-- LOCAL JAVASCRIPT TAG -->
+    <script src="assets/javascript/app.js"></script>
 
-
-
-
-
-    </body>
-
-
-
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByc-WZhvNzcFXJk0Jt5IuBBMOF3wI8IXc&callback=initMap"
-                    async defer></script>
 
 </body>
-
-
 </html>
