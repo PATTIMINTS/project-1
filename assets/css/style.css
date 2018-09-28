@@ -1,9 +1,10 @@
+/* BODY IMAGE STYLE */
+
+
 body {
     background-image: url(../images/emosbw.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    
-
 }
 
 /* FONT STYLE */
@@ -13,9 +14,7 @@ body {
     background-color: darkgray;
     color: white;
     
-    /* background-image: linear-gradient(to right top, blue, teal, darkgreen, black); */    
 }
-
 
 /* TOP LOGO STYLE */
 
@@ -59,10 +58,4 @@ body {
 
 
 
-/* 9/20 GIG LIST STYLE | HAS BEEN REVISED, SAVE UNTIL MASTER PUSH 
-.gigList {
-    height: 400px;
-    width: 100%;
-}
-*/
 

@@ -1,3 +1,4 @@
+// BEING FUNCTION //
 
 let config = {
 
@@ -9,18 +10,20 @@ let config = {
   messagingSenderId: "56220760164"
 
 };
+
+  // INITIALIZE FIREBASE //
 firebase.initializeApp(config);
 
-var database = firebase.database()
+let database = firebase.database()
 
 
 
-var date = "10/1";
-var name = "Lydia Lunch";
-var venue = "Beerland";
-var time = "8 PM";
+let date = "10/1";
+let name = "Lydia Lunch";
+let venue = "Beerland";
+let time = "8 PM";
 
-var newBand = {
+let newBand = {
   date: date,
   name: name,
   venue: venue,
@@ -28,17 +31,19 @@ var newBand = {
   dateAdded: firebase.database.ServerValue.TIMESTAMP
 
 };
-//console.log(newBand);
-// Code for push to database
+
+// CONSOLE.LOG( newBand) ;
+// CODE FOR PUSH DATABASE
+
 database.ref("/user").push(newBand);
 
 
 database.ref("/user").on("child_added", function (childSnapshot, prevChildKey) {
 
-  var dateof = childSnapshot.val().date;
-  var bandName = childSnapshot.val().name;
-  var venues = childSnapshot.val().venue;
-  var timeof = childSnapshot.val().time;
+  let dateof = childSnapshot.val().date;
+  let bandName = childSnapshot.val().name;
+  let venues = childSnapshot.val().venue;
+  let timeof = childSnapshot.val().time;
 
 
   console.log(dateof);
@@ -59,13 +64,11 @@ database.ref("/user").on("child_added", function (childSnapshot, prevChildKey) {
   console.log("Errors handled: " + errorObject.code);
 
 })
-
-
-
 function initMap() {
+  
   // Map options 
   let options = {
-    zoom: 12,
+    zoom: 11,
     center: { lat: 30.2672, lng: -97.7431 },
     styles: [
       { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
@@ -151,31 +154,49 @@ function initMap() {
   // New Map
   let map = new google.maps.Map(document.getElementById('map'), options);
 
-  /*
-  // Add marker
-  let marker =  new google.maps.Marker({
-      position: {lat:30.246765, lng:-97.73162100000002},
-      map:map 
-  });
-  
-  // Info window
-  let infoWindow = new google.maps.InfoWindow({
-      content: "<h6>Where Lance lives</h6>"
-  });
-  
-  // Listener for click 
-  marker.addListener("click", function(){
-      infoWindow.open(map, marker);
-  }); 
-  */
+  let venuelatlng = [
+    [ "Sugar Baby Watermelon", 30.246765, -97.73162100000002, 1],
+    [ "Stubbs", 30.2685, -97.7363, 2],
+    [ "Spiderhouse Ballroom", 30.2955, -97.7418, 3],
+    [ "The Electric Church", 30.2517, -97.6993, 4],
+    [ " The Nutty Brown", 30.2086, -97.9725, 5],
+    [ "Nomad's Bar", 30.3126, -97.7049, 6]
+  ];
+
+  // let map = new google.maps.Map (document.getElementById('map'), {
+    //zoom: 12, 
+    //center: new google.maps.LatLng (30.2672, -97.7431 ),
+    //mapTypeId: google.maps.MapTypeId.ROADMAP
+  //});
+
+   //let infowindow = new google.maps.InfoWindow () //
+
+    for (i = 0; i < venuelatlng.length; i++) {
+      marker= new google.maps.Marker({
+        position: new google.maps.LatLng(venuelatlng [i][1], venuelatlng [i][2]),
+        map: map
+      });
+
+    let infowindow = new google.maps.InfoWindow ();
+
+    google.maps.events.addListener(marker, 'click', (function(marker, i) {
+      return function () {
+        infowindow.setContent (venuelatlng [i][0]);
+        infowindow.open(map, marker);
+
+      }
+    })(marker, i));
+    }
 
   // Add marker function 
   function addMarker(coords) {
     let marker = new google.maps.Marker({
-      position: { lat: 30.246765, lng: -97.73162100000002 },
+      position: venuelatlng,
       map: map
     });
   }
+
+  addMarker();
 
 
 
