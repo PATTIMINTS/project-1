@@ -1,23 +1,19 @@
 /* BODY IMAGE STYLE */
-
-
 body {
     background-image: url(../images/emosbw.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* FONT STYLE */
 
 /* CONTAINER SYTLE */ 
 .container {
     background-color: darkgray;
-    color: white;
-    
+    color: white;    
 }
 
-/* TOP LOGO STYLE */
 
+/* TOP LOGO STYLE */
 .logo {
     height: 100px;
     width: 100%;
@@ -28,11 +24,10 @@ body {
 #title {
     font-family: 'Barrio', cursive;
     font-size: 40px;
-    font-weight: bolder;
-    
-    
+    font-weight: bolder;    
 }
-/* Table for gig list */
+
+/* TABLE STYLE */
 
 .gig {
     /*background-color: rgba(109, 32, 18, 0.774);*/
