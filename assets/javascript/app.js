@@ -182,6 +182,8 @@ function initMap() {
     google.maps.events.addListener(marker, 'click', (function(marker, i) {
       return function () {
         infowindow.setContent (venuelatlng [i][0]);
+        infowindow.open(map, marker);
+
       }
     })(marker, i));
     }
