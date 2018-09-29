@@ -35,7 +35,7 @@ let newBand = {
 // CONSOLE.LOG( newBand) ;
 // CODE FOR PUSH DATABASE
 
-database.ref("/user").push(newBand);
+// database.ref("/user").push(newBand);
 
 
 database.ref("/user").on("child_added", function (childSnapshot, prevChildKey) {

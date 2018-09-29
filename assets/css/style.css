@@ -23,7 +23,7 @@ body {
 
 #title {
     font-family: 'Barrio', cursive;
-    font-size: 40px;
+    font-size: 80px;
     font-weight: bolder;    
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .fa-band-aid {
-    color: rgb(161, 10, 10);
+    color: rgb(170, 110, 70);
 }
 
 
