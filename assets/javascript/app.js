@@ -163,6 +163,17 @@ function initMap() {
     [ "Nomad's Bar", 30.3126, -97.7049, 6]
   ];
 
+  
+  
+
+
+//  new venuelatlng(30.246765, 97.73161200000002);
+//  mMap.addMarker(new MarkerOptions()
+//                             .position(LANCE)
+//                             .title("Sugar Baby Watermelon")
+//                             .snippet("Trap House"));
+    
+
   // let map = new google.maps.Map (document.getElementById('map'), {
     //zoom: 12, 
     //center: new google.maps.LatLng (30.2672, -97.7431 ),
@@ -176,11 +187,12 @@ function initMap() {
         position: new google.maps.LatLng(venuelatlng [i][1], venuelatlng [i][2]),
         map: map
       });
-
-    
-
+      
     }
 
+    marker.addListner( 'click', function (){
+      infowindow.open(map, marker);
+    });
   // Add marker function 
   function addMarker(coords) {
     let marker = new google.maps.Marker({
