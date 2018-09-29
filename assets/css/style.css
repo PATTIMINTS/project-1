@@ -1,0 +1,56 @@
+/* BODY IMAGE STYLE */
+body {
+    background-image: url(../images/emosbw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* CONTAINER SYTLE */ 
+.container {
+    background-color: darkgray;
+    color: white;    
+}
+
+
+/* TOP LOGO STYLE */
+.logo {
+    height: 100px;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}
+
+#title {
+    font-family: 'Barrio', cursive;
+    font-size: 80px;
+    font-weight: bolder;    
+}
+
+/* TABLE STYLE */
+
+.gig {
+    /*background-color: rgba(109, 32, 18, 0.774);*/
+    background-color: rgb(20, 45, 66)
+}
+#gigTable {
+    background-color: white;
+}
+
+/* MAP STYLE */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#red {
+    color: rgb(161, 10, 10);
+}
+
+.fa-band-aid {
+    color: rgb(170, 110, 70);
+}
+
+
+
+
